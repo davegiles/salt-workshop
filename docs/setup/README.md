@@ -15,20 +15,20 @@ You can install both from the links below:
 
 > The Vagrant command needs to be run from root directory of this project.
 
-Before you run Vagrant up, change following parameters in `Vagrantfile`
-according to your needs or preferences. I typically start 1 master and 2 nodes,
-with 2GB for Master and 1GB for nodes based on what I need to build.
-
 ## Configure
 
+Before running `vagrant up`, you can modify the amount of memory with which
+the Salt Master and Salt Minions are provisioned according to your needs or
+preferences.  For the purposes of this workshop, 2G for the Master and 512M for
+the Minions should be sufficient.  If you are constrained on memory, however,
+you can most likely drop the Master's memory down to 1G.
+
 You can configure these values by setting the following variables.  This shows
-the defaults.
+the defaults.  Note that it must be specified in MB.
 
 ```
 export MASTER_MEMORY=2048
 export MINION_MEMORY=512
-export MASTER_INSTANCES=1
-export MINION_INSTANCES=2
 ```
 
 ## Run
