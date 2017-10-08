@@ -2,7 +2,7 @@
 
 > Note: This has been forked from the upstream repository and is a work in
 > progress.  Things are broken, and they're not clear.  So far, only the first
-> three modules have been updated.
+> four modules have been updated.
 
 ## Introduction
 
@@ -17,7 +17,7 @@ managing a multi-distribution environment is like.
 |---|---|
 |[Setup](docs/setup)| Setup the local environment so that you can start using SaltStack|
 |[Targeting](docs/target)|How to target nodes|
-|[Grains](docs/grains)| How to use Grains to get information about systems|
+|[Grains](docs/grains)|How to use Grains to get information about systems|
 |[YAML](docs/yaml)|Three simple rules to use YAML|
 |[Pillar](docs/pillar)|User-defined configuration data|
 |[Directory Structure](docs/dir_structure)|The structure of code and data in Salt|
