@@ -1,6 +1,6 @@
-|Home          |Previous          | Next              |
-|--------------|------------------|-------------------|
-|[Home](../../)|[Setup](../setup) |[Grains](../grains)|
+| Home           | Previous          | Next                |
+|----------------|-------------------|---------------------|
+| [Home](../../) | [Setup](../setup) | [Grains](../grains) |
 
 # Targeting
 
@@ -111,6 +111,6 @@ smaster.learn.com:
 In this section, we've learned about the various targeting options.  In the next
 section, we'll explore grains.
 
-|Home          |Previous          | Next              |
-|--------------|------------------|-------------------|
-|[Home](../../)|[Setup](../setup) |[Grains](../grains)|
+| Home           | Previous          | Next                |
+|----------------|-------------------|---------------------|
+| [Home](../../) | [Setup](../setup) | [Grains](../grains) |

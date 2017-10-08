@@ -1,6 +1,6 @@
-|Home          |Previous                | Next              |
-|--------------|------------------------|-------------------|
-|[Home](../../)|[Targeting](../target) |[YAML](../yaml)    |
+| Home           | Previous               | Next            |
+|----------------|------------------------|-----------------|
+| [Home](../../) | [Targeting](../target) | [YAML](../yaml) |
 
 # Grains
 
@@ -409,6 +409,6 @@ In this section, we learned what grains are and how to examine and use them.
 Up next, we'll start digging into YAML, one of the fundamental markup languages
 used by SaltStack.
 
-|Home          |Previous                | Next              |
-|--------------|------------------------|-------------------|
-|[Home](../../)|[Targeting](../target) |[YAML](../yaml)    |
+| Home           | Previous               | Next            |
+|----------------|------------------------|-----------------|
+| [Home](../../) | [Targeting](../target) | [YAML](../yaml) |

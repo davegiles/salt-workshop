@@ -1,6 +1,6 @@
-|Home          |Previous            | Next                  |
-|--------------|--------------------|-----------------------|
-|[Home](../../)|[Grains](../grains) |[Pillar](../pillar)    |
+| Home           | Previous            | Next                |
+|----------------|---------------------|---------------------|
+| [Home](../../) | [Grains](../grains) | [Pillar](../pillar) |
 
 # Yaml
 
@@ -135,6 +135,6 @@ world, data structures can quickly become complicated.  We'll look at access the
 values of a YAML data structure when we start looking at Jinja.  Before that,
 though, we'll want to look at pillars next.
 
-|Home          |Previous            | Next                  |
-|--------------|--------------------|-----------------------|
-|[Home](../../)|[Grains](../grains) |[Pillar](../pillar)    |
+| Home           | Previous            | Next                |
+|----------------|---------------------|---------------------|
+| [Home](../../) | [Grains](../grains) | [Pillar](../pillar) |

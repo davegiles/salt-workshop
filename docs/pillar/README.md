@@ -1,6 +1,6 @@
-|Home          |Previous          | Next                                      |
-|--------------|------------------|-------------------------------------------|
-|[Home](../../)|[YAML](../yaml)   |[Directory Structure](../dir_structure)    |
+| Home           | Previous        | Next                                    |
+|----------------|-----------------|-----------------------------------------|
+| [Home](../../) | [YAML](../yaml) | [Directory Structure](../dir_structure) |
 
 # Pillar
 
@@ -206,6 +206,6 @@ We've shown how you can create and assign pillars, as well as a brief sidebar on
 the differences between grains and pillars.  Next, we'll start talking about the
 Salt directory structure and how it can be modified.
 
-|Home          |Previous          | Next                                      |
-|--------------|------------------|-------------------------------------------|
-|[Home](../../)|[YAML](../yaml)   |[Directory Structure](../dir_structure)    |
+| Home           | Previous        | Next                                    |
+|----------------|-----------------|-----------------------------------------|
+| [Home](../../) | [YAML](../yaml) | [Directory Structure](../dir_structure) |

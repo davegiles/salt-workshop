@@ -1,6 +1,6 @@
-|Home          |Previous       | Next              |
-|--------------|---------------|-------------------|
-|[Home](../../)|[Home](../../)   |[Targeting](../target) |
+| Home           | Previous       | Next                   |
+|----------------|----------------|------------------------|
+| [Home](../../) | [Home](../../) | [Targeting](../target) |
 
 # Setup
 
@@ -162,6 +162,6 @@ In this section, we accepted minion keys using the `salt-key` command, and then
 we verified that the minions were reachable by the master.  Next, we'll take a
 look at targeting.
 
-|Home          |Previous       | Next              |
-|--------------|---------------|-------------------|
-|[Home](../../)|[Home](../../) |[Targeting](../target) |
+| Home           | Previous       | Next                   |
+|----------------|----------------|------------------------|
+| [Home](../../) | [Home](../../) | [Targeting](../target) |
