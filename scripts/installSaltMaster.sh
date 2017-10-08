@@ -8,7 +8,7 @@ sudo apt-get install -yqq salt-master
 sudo apt-get install -yqq salt-minion
 sudo apt-get install -yqq salt-ssh
 
-echo "192.168.17.80 salt" >> /etc/hosts
+echo "192.168.17.100 salt" >> /etc/hosts
 sudo cp /vagrant/conf/minion /etc/salt
 sudo cp /vagrant/conf/master /etc/salt
 sudo cp /vagrant/conf/reactor.conf /etc/salt/master.d

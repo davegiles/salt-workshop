@@ -237,7 +237,7 @@ $ sudo salt '*1*' grains.items
 To list only specific grains, you can pass them as arguments to the
 `grains.item` function:
 
- ```
+```
 $ sudo salt '*1*' grains.item os_family osfinger
 1.sminion.learn.com:
     ----------
@@ -248,6 +248,25 @@ $ sudo salt '*1*' grains.item os_family osfinger
 ```
 
 > Note that this function does not contain the `s` at the end of `item`!
+
+You can get grains back from everything in the infrastructure, regardless of
+the operating system, as long as the system is managed by this Salt master:
+
+```
+$ sudo salt '*' grains.item os
+0.sminion.learn.com:
+    ----------
+    os:
+        Ubuntu
+smaster.learn.com:
+    ----------
+    os:
+        Ubuntu
+1.sminion.learn.com:
+    ----------
+    os:
+        CentOS
+```
 
 ## Custom Grains
 
@@ -348,9 +367,13 @@ same we used the built-in grains!
 $ sudo salt -G 'roles:webserver' test.ping
 0.sminion.learn.com:
     True
+1.sminion.learn.com:
+    True
 
 $ sudo salt -G 'roles:memcache' test.ping
 0.sminion.learn.com:
+    True
+1.sminion.learn.com:
     True
 
 $ sudo salt '0.sminion.learn.com' grains.item roles
@@ -358,7 +381,7 @@ $ sudo salt '0.sminion.learn.com' grains.item roles
     ----------
     roles:
         - webserver
-        - memcache
+        - memcache 
 ```
 
 As you can see from the above commands, when the grain is a list of values, it
@@ -376,6 +399,7 @@ $ sudo salt '*' grains.item deployment
 1.sminion.learn.com:
     ----------
     deployment:
+        datacenter4
 smaster.learn.com:
     ----------
     deployment:

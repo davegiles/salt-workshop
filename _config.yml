@@ -1,4 +1,4 @@
 theme: jekyll-theme-architect
 title: "Tyler's SaltStack Workshop"
 description: "A SaltStack workshop for beginners."
-show_downloads: "false"
+show_downloads: false
