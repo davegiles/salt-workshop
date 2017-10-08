@@ -255,7 +255,7 @@ two specific configuration options: `file_roots` and `pillar_roots`.
 
 First, let's look at `file_roots`:
 
-```
+```yaml
 # The file server works on environments passed to the master, each environment 
 # can have multiple root directories, the subdirectories in the multiple file 
 # roots cannot match, otherwise the downloaded files will not be able to be
@@ -274,7 +274,7 @@ like your states and templates will go.  Note that pillar data doesn't go here.
 
 So where does pillar data go?  Well, let's look at `pillar_roots`!
 
-```
+```yaml
 # Salt Pillars allow for the building of global data that can be made selectively
 # available to different minions based on minion grain filtering. The Salt
 # Pillar is laid out in the same fashion as the file server, with environments,
