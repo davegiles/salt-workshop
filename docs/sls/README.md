@@ -1,6 +1,6 @@
 | Home           | Previous          | Next                   |
 |----------------|-------------------|------------------------|
-| [Home](../../) | [Jinja](../jinja) | [Forumlas](../forumla) |
+| [Home](../../) | [Jinja](../jinja) | [Forumlas](../formula) |
 
 # Salt States
 
@@ -8,4 +8,4 @@
 
 | Home           | Previous          | Next                   |
 |----------------|-------------------|------------------------|
-| [Home](../../) | [Jinja](../jinja) | [Forumlas](../forumla) |
+| [Home](../../) | [Jinja](../jinja) | [Forumlas](../formula) |
