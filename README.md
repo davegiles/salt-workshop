@@ -2,7 +2,7 @@
 
 > Note: This has been forked from the upstream repository and is a work in
 > progress.  Things are broken, and they're not clear.  So far, only the first
-> six modules have been released.
+> seven modules have been released.
 
 ## Introduction
 
@@ -21,7 +21,7 @@ managing a multi-distribution environment is like.
 | [YAML](docs/yaml)                             | Three simple rules to use YAML                                               |
 | [Pillar](docs/pillar)                         | User-defined configuration data                                              |
 | [Directory Structure](docs/dir_structure)     | The structure of code and data in Salt                                       |
-| [Remote execution](docs/remote_execution)     | How to fire commands from the master (Coming Soon)                           |
+| [Remote execution](docs/remote_execution)     | How to fire commands from the master                                         |
 | [Jinja](docs/jinja)                           | An exploration of the templating language for programming Salt (Coming Soon) |
 | [State Files](docs/sls)                       | Salt States: the convergence of infrastructure (Coming Soon)                 |
 | [Formula](docs/formula)                       | Making SaltStack repeatable (Coming Soon)                                    |
