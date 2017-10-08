@@ -1,24 +1,32 @@
-
 |Home          |Previous                | Next              |
 |--------------|------------------------|-------------------|
-|[Home](../../)|[Targetting](../target) |[YAML](../yaml)    |
+|[Home](../../)|[Targeting](../target) |[YAML](../yaml)    |
 
 # Grains
 
-Grains are pieces of information about the Nodes in your cluster that Salt discovers when it installs Minion on the node. The grain attribute comprise of information about the OS, Kernel and other system information attributes.
+Grains are pieces of information about the systems in your cluster that Salt
+discovers when it starts the Salt Minion on the node.  The grain attribute
+contains information about the OS, kernel, and other system attributes.
 
-In addition to the built in Grains, you can also add custom grains to a node which can be used for classification. For example some teams add a "roles" grain to the system and then assign roles such as "webserver", "dbserver" and so on to a node.
+In addition to the built in Grains, you can also add custom grains to a node.
+These can be used for classification.  For example, some teams add a `roles`
+grain to the system and then assign roles such as `webserver`, `dbserver`,
+and so on.
 
-A grain can be a value or a list of values based on nature of the grain attribute. Let's get some practicals :) 
+A grain can be a value or a list of values based on the nature of the grain
+attribute. Let's get to some hands-on examples!
 
 ## Built In Grains
-Built in grains are pieces of information which Salt itself discovers ands is typically related to kernel, system and any other available information based on OS.
 
-To list grains that are present on a node, we can use ls command on grains module:
+Built-in grains are pieces of information that Salt itself discovers.  These are
+typically related to the kernel, system, and other information based on the OS.
+
+To list grains that are present on a node, we can use the `ls` function on the
+`grains` module:
 
 ```
-sudo salt '*1*' grains.ls
-1.sagent.learn.com:
+$ sudo salt '*1*' grains.ls
+1.sminion.learn.com:
     - SSDs
     - biosreleasedate
     - biosversion
@@ -87,12 +95,13 @@ sudo salt '*1*' grains.ls
     - zmqversion
  ```
 
-If we want to see the values of the grains as well, we can use items command on the grains module. The output is fairly long and I have truncated it and pasted it here:
-
+If we want to see the values of the grains as well, we can use the `items`
+function on the `grains` module.  The output is fairly long, so I have truncated
+it here:
 
 ```
-sudo salt '*1*' grains.items
-1.sagent.learn.com:
+$ sudo salt '*1*' grains.items
+1.sminion.learn.com:
     ----------
     SSDs:
     biosreleasedate:
@@ -191,9 +200,9 @@ sudo salt '*1*' grains.items
             - infracloud.com
         sortlist:
     domain:
-        sagent.learn.com
+        sminion.learn.com
     fqdn:
-        1.sagent.learn.com
+        1.sminion.learn.com
     fqdn_ip4:
         - 127.0.0.1
     fqdn_ip6:
@@ -220,17 +229,17 @@ sudo salt '*1*' grains.items
         lo:
             00:00:00:00:00:00
     id:
-        1.sagent.learn.com
+        1.sminion.learn.com
     init:
 
+```
+
+To list only specific grains, you can pass them as arguments to the
+`grains.item` function:
+
  ```
-
-Now to only list the grains and their values you need you can pass arguments to the item method as shown in example below:
-
-
- ```
- sudo salt '*1*' grains.item os_family osfinger
-1.sagent.learn.com:
+$ sudo salt '*1*' grains.item os_family osfinger
+1.sminion.learn.com:
     ----------
     os_family:
         Debian
@@ -238,14 +247,25 @@ Now to only list the grains and their values you need you can pass arguments to 
         Ubuntu-14.04
 ```
 
-## Grains Configuration
+> Note that this function does not contain the `s` at the end of `item`!
 
-The grains for a node can be configured in two different ways. One way is to configure the minion file located at ```/etc/salt/minion``` and modify the grains section there. Following snippet shows the grains configuration example commented in the minion configuration file.
+## Custom Grains
 
-As you can notice, the roles grain is a list whereas the deployment and other grains have a single value. Let's uncomment these values and save the file. Please note that the 'grains' declaration should start with one space and each of others are separated by two spaces (This is a YAML syntax which we will cover shortly)
+Salt will automatically discover grains based on a wide variety of defaults.
+However, you may want custom grains for your minions.  This data can be quite
+extensive and incredibly useful.  We'll take a look at configuring custom grains
+next.
 
+### Configuring Custom Grains
+
+The grains for a node can be configured in two different ways.  One way is to
+configure the minion file located at `/etc/salt/minion` and modify the grains
+section there.  The following snippet shows the grains configuration example
+commented in the minion configuration file.
 
 ```
+# file: /etc/salt/minion
+
 # Custom static grains for this minion can be specified here and used in SLS
 # files just like all other grains. This exmple sets 4 custom grains, with
 # the 'roles' grain having two values that can be matched against.
@@ -258,30 +278,55 @@ As you can notice, the roles grain is a list whereas the deployment and other gr
 #  cab_u: 14-15
 #
 ```
-After modification the grain section looks like:
+
+As you can see, the roles grain is a list, whereas the deployment and other
+grains have a single value.  Let's uncomment these values and save the file.
+Take careful note of the formatting of this data: this is YAML, and YAML is
+picky.
+
+> We will discuss YAML in greater detail in the next section.
+
+After modification, the grain section looks like this:
 
 ```
+# file: /etc/salt/minion
+
+# Custom static grains for this minion can be specified here and used in SLS
+# files just like all other grains. This exmple sets 4 custom grains, with
 # the 'roles' grain having two values that can be matched against.
- grains:
-   roles:
-     - webserver
-     - memcache
-   deployment: datacenter4
-#  cabinet: 13
-#  cab_u: 14-15
+grains:
+  roles:
+    - webserver
+    - memcache
+  deployment: datacenter4
+  cabinet: 13
+  cab_u: 14-15
 ```
-Now we will have to restart the minion for above changes to take effect.
+
+For the changes to take effect, we'll have to restart the `salt-minion`.  On Ubuntu:
 
 ```
 sudo service salt-minion restart
 ```
-Simikarly grains for a node can also be defined in a file at ```/etc/salt/minion.d/grains``` and the effect is the same. You will have to follow the YAML syntax neverthless.
 
-## Custom Grain: Define and use
+On Centos:
 
-If you have followed the previous section then we have defined custom grain called roles and deployment on that node. We can validate the same on same node:
+```
+sudo systemctl restart salt-minion
+```
 
-```$ sudo salt-call grains.item deployment roles
+The grains can also be configured in `/etc/salt/minion.d/grains`.  The
+configuration and effect are the same, but it gives you additional flexibility
+for maintaining a clean and simple configuration. 
+
+### Verifying Custom Grains
+
+If you followed the previous section, then you should have a number of new,
+custom grains.  We can validate their presence on the same node using
+`salt-call`:
+
+```
+$ sudo salt-call grains.item deployment roles cabinet cab_u
 local:
     ----------
     deployment:
@@ -289,37 +334,46 @@ local:
     roles:
         - webserver
         - memcache
+    cabinet: 13
+    cab_u: 14-15
 ```
 
-Now if we switch to master, we can use this custom grain for filtering etc. as we used built in grains:
+> `salt-call` is a command for running Salt functions on the local system
+> without involving the master.
+
+Now if we switch to the master, we can use this custom grain for filtering the
+same we used the built-in grains!
 
 ```
 $ sudo salt -G 'roles:webserver' test.ping
-0.sagent.learn.com:
+0.sminion.learn.com:
     True
 
 $ sudo salt -G 'roles:memcache' test.ping
-0.sagent.learn.com:
+0.sminion.learn.com:
     True
 
-$ sudo salt '0.sagent.learn.com' grains.item roles
-0.sagent.learn.com:
+$ sudo salt '0.sminion.learn.com' grains.item roles
+0.sminion.learn.com:
     ----------
     roles:
         - webserver
-        - memcache    
+        - memcache
 ```
-As you can note from above two commands, we queried on the grain which has a list of values and it matched even if one of the roles from the list matched the value we quried.
 
+As you can see from the above commands, when the grain is a list of values, it
+is matched as long as the value we specified exists in the list.
 
-If a grain is set only on certain nodes, you will get blank value for other nodes for that grain:
+Finally, if a grain is set only on certain nodes, you will get blank value for
+other nodes for that grain:
+
 ```
 $ sudo salt '*' grains.item deployment
-0.sagent.learn.com:
+0.sminion.learn.com:
     ----------
     deployment:
         datacenter4
-1.sagent.learn.com:
+1.sminion.learn.com:
     ----------
     deployment:
 smaster.learn.com:
@@ -327,12 +381,10 @@ smaster.learn.com:
     deployment:
 ```
 
-
-# Quiz
-TBD
+In this section, we learned what grains are and how to examine and use them.
+Up next, we'll start digging into YAML, one of the fundamental markup languages
+used by SaltStack.
 
 |Home          |Previous                | Next              |
 |--------------|------------------------|-------------------|
-|[Home](../../)|[Targetting](../target) |[YAML](../yaml)    |
-
-
+|[Home](../../)|[Targeting](../target) |[YAML](../yaml)    |
