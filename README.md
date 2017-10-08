@@ -2,7 +2,7 @@
 
 > Note: This has been forked from the upstream repository and is a work in
 > progress.  Things are broken, and they're not clear.  So far, only the first
-> four modules have been updated.
+> five modules have been updated.
 
 ## Introduction
 
