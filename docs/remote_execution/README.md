@@ -72,6 +72,7 @@ if you don't want to context switch, you can use `sys.doc` to find the
 documentation for any function!  Let's look at `cmd.run`'s documentation now:
 
 ```
+{% raw %}
 $ sudo salt '*' sys.doc cmd.run
 cmd.run:
 
@@ -208,6 +209,7 @@ cmd.run:
     remote shell command by manually specifying the kwarg:
 
         salt '*' cmd.run cmd='sed -e s/=/:/g'
+{% endraw %}
 ```
 
 That...is a lot of documentation.  And plenty of examples and explanation!  Most
