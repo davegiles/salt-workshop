@@ -41,8 +41,6 @@ called `os`:
 ```
 $ sudo salt -G 'os:Ubuntu' test.ping
 
-1.sminion.learn.com:
-    True
 0.sminion.learn.com:
     True
 smaster.learn.com:
@@ -55,7 +53,7 @@ smaster.learn.com:
 We can also filter based on the subnet using the -S flag:
 
 ```
-$ sudo salt -S '192.168.17.80' test.ping
+$ sudo salt -S '192.168.17.100' test.ping
 
 smaster.learn.com:
     True
@@ -70,7 +68,7 @@ filtering. In following example we check if the subnet matches and also that the
 `os` grain is Ubuntu:
 
 ```
-$sudo salt -C 'S@192.168.17.80 and G@os:Ubuntu' test.ping
+$sudo salt -C 'S@192.168.17.100 and G@os:Ubuntu' test.ping
 
 smaster.learn.com:
     True
