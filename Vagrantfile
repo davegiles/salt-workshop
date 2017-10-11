@@ -4,7 +4,7 @@
 VAGRANTFILE_API_VERSION = '2'
 
 MASTER_MEMORY = ENV.key?('MASTER_MEMORY') ? ENV['MASTER_MEMORY'] : 2048
-MINION_MEMORY = ENV.key?('MINION_MEMORY') ? ENV['MINION_MEMORY'] : 2048
+MINION_MEMORY = ENV.key?('MINION_MEMORY') ? ENV['MINION_MEMORY'] : 512
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define 'salt_master' do |smaster|
