@@ -59,9 +59,6 @@ smaster.learn.com:
     True
 ```
 
-> If you changed your `SALT_SUBNET` environment variable, don't forget to change
-> it to match in the command above.
-
 If you have more than one condition, then you can use the compound targeting
 option (-C).  In the condition, use the flags followed by `@` to specify the
 filtering. In following example we check if the subnet matches and also that the
