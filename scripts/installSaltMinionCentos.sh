@@ -11,3 +11,4 @@ sudo cp /vagrant/conf/minion /etc/salt
 sudo cp /vagrant/conf/_schedule.conf /etc/salt/minion.d
 
 sudo systemctl restart salt-minion
+sudo systemctl enable salt-minion
