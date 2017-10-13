@@ -561,6 +561,7 @@ up the changes.
 Now, let's create a template at `/srv/template/snmp.j2`:
 
 ```yaml
+{% raw %}
 # file: /srv/template/snmp.j2
 
 snmp {
@@ -569,6 +570,7 @@ snmp {
     interface {{ salt.pillar.get('snmp:interface') }};
     community {{ salt.pillar.get('snmp:community') }};
 }
+{% endraw %}
 ```
 
 Now that we have the template, we need to have the pillar data available to fill
