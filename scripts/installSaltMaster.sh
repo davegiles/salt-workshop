@@ -11,9 +11,8 @@ sudo apt-get install -yqq salt-ssh
 echo "192.168.17.100 salt" >> /etc/hosts
 sudo cp /vagrant/conf/minion /etc/salt
 sudo cp /vagrant/conf/master /etc/salt
-sudo mkdir -p /srv/formulas 
 sudo mkdir -p /srv/salt
-sudo mkdir -p /srv/pillars
+sudo mkdir -p /srv/pillar
 
 sudo service salt-master restart
 sudo service salt-minion restart
