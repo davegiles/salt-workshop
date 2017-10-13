@@ -820,6 +820,7 @@ State to deploy the Salt Proxies.  Create the path `/srv/salt/salt_proxy`, and
 then create the file `/srv/salt/salt_proxy/init.sls` with these contents:
 
 ```yaml
+{% raw %}
 # file: /srv/salt/salt_proxy/init.sls
 
 {% set salt_proxy_names = salt['pillar.get']('salt_proxy_names', []) %}
@@ -838,6 +839,7 @@ salt_proxy_configure_{{ name }}:
     - proxyname: {{ name }}
     - start: True
 {% endfor %}
+{% endraw %}
 ```
 
 We'll define the `salt_proxy_names` in the next section.  For now, though, let's
