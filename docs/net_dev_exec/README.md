@@ -560,7 +560,7 @@ up the changes.
 
 Now, let's create a template at `/srv/template/snmp.j2`:
 
-```yaml
+```jinja
 {% raw %}
 # file: /srv/template/snmp.j2
 
