@@ -1852,6 +1852,21 @@ ERROR: Minions returned with non-zero exit code
 > The `ERROR` is actually expected: it shows that there was no state to apply
 > to the Ubuntu minions, which is exactly what we should have expected.
 
+Now, let's make sure that the proxy minions are actually running:
+
+```
+$ sudo salt '1*' salt_proxy.is_running rtr1
+1.sminion.learn.com:
+    ----------
+    result:
+        True
+$ sudo salt '1*' salt_proxy.is_running rtr2
+1.sminion.learn.com:
+    ----------
+    result:
+        True
+```
+
 Okay.  Great!  Now, let's start poking around!
 
 ## Accepting the Keys
