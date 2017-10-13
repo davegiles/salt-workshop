@@ -305,7 +305,9 @@ picky.
 
 > We will discuss YAML in greater detail in the next section.
 
-After modification, the grain section looks like this:
+After modification, the grains section looks like this:
+
+> Note: this should take place on the actual minion itself, not on the master.
 
 ```
 # file: /etc/salt/minion
