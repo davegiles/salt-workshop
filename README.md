@@ -30,6 +30,6 @@ managing a multi-distribution environment is like.
 | [Reactor](docs/reactor)                       | How to create events and actions (Coming Soon)                               |
 | [Orchestration](docs/orchestrate)             | Orchestrate complex workflows (Coming Soon)                                  |
 | [Schedules](docs/schedules)                   | Routinely perform a Salt action (Coming Soon)                                |
-| [Salt Proxy](docs/salt_proxy)                 | How to use Salt with nodes that can't run a Salt Minion (Coming Soon)        |
+| [Salt Proxy](docs/salt_proxy)                 | How to use Salt with nodes that can't run a Salt Minion                      |
 | [Network Device Execution](docs/net_dev_exec) | Using Salt to run commands on network devices (Coming Soon)                  |
 | [Network Device States](docs/net_dev_state)   | Using Salt to manage states on network devices (Coming Soon)                 |
