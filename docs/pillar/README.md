@@ -12,7 +12,7 @@ relevant nodes.
 ### Pillars vs. Grains
 
 We briefly need to explain the difference between a grain and a pillar.  While
-at first glance they appear to fulfill similar rules, they are drastically
+at first glance they appear to fulfill similar roles, they are drastically
 different.  The simplest way to view them is this:
 
 - Grains are things that the minion knows about itself
