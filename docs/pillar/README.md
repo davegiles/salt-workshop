@@ -80,7 +80,7 @@ following contents:
 
 ```yaml
 base:
-  - 'G@roles:webserver':
+  'G@roles:webserver':
     - webserver
 ```
 
