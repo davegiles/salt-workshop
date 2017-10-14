@@ -264,9 +264,6 @@ smaster.learn.com:
             - openssl
             - openssl-devel
             - libffi-devel
-    salt_proxy_names:
-        - rtr1
-        - rtr2
 ```
 
 Great!  Our pillar work is done for now.  Let's move on to creating a highstate

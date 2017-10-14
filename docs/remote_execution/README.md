@@ -506,7 +506,7 @@ $ sudo salt '0*' network.traceroute 8.8.8.8
 ```
 
 > It's left as an exercise for the reader to confirm all nodes respond
-> appropriately.  The output is length, so we've only targeted one minion for
+> appropriately.  The output is lengthy, so we've only targeted one minion for
 > this part of the workshop.
 
 Excellent!  Let's take a look at one more remote execution use case before we
@@ -519,8 +519,13 @@ network diagnostics information.  You can do this with a series of Salt
 commands, or you can do it with a single compound command!  Let's take a look!
 
 ```
-$ sudo salt '0*' network.ping,file.read,network.traceroute,network.arp,network.routes google.com,/etc/resolv.conf,8.8.8
-.8,,                                                                                                                                                       
+$ sudo salt '0*' \
+  network.ping,\
+  file.read,\
+  network.traceroute,\
+  network.arp,\
+  network.routes \
+  google.com,/etc/resolv.conf,8.8.8.8,,
 0.sminion.learn.com:
     ----------
     file.read:

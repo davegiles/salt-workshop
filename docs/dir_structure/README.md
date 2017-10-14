@@ -49,8 +49,8 @@ configuration at run-time.
 
 Next, we have Salt's PKI directories.  These exist at `/etc/salt/pki/`, and they
 contain private and public keys used to authenticate nodes.  Two sub-directories
-of exist: `/etc/salt/pki/master/` and `/etc/salt/pki/minion`.  Let's look at
-`/etc/salt/pki/minion` on `salt_minion_0` first as its a little bit simpler.
+exist: `/etc/salt/pki/master/` and `/etc/salt/pki/minion`.  Let's look at
+`/etc/salt/pki/minion` on `salt_minion_0` first as it's a little bit simpler.
 
 ```
 $ sudo ls -l /etc/salt/pki/minion/
@@ -80,7 +80,7 @@ $ sudo rm /etc/salt/pki/minion/minion.{pem,pub}
 $ sudo ls -l /etc/salt/pki/minion/
 total 4
 -rw-r--r-- 1 root root 450 Oct  8 01:12 minion_master.pub
-$ service salt-minion restart
+$ sudo service salt-minion restart
 ```
 
 > On `salt_minion_1`, the command to restart the Minion is
